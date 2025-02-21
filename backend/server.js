@@ -9,6 +9,11 @@ const app = express();
 app.use(express.json());
 app.use(cors()); // Allow frontend requests
 
+// Root route
+app.get("/", (req, res) => {
+  res.send("Welcome to the QuickReach AI Backend!");
+});
+
 // Contact Form Route
 app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
